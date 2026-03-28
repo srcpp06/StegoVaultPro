@@ -2,10 +2,9 @@ name: Flutter CI/CD (Android + Windows + Linux + iOS)
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, Stego ]     # ← Stego qo‘shildi
   pull_request:
-    branches: [ main, develop ]
-
+    branches: [ main, develop, Stego ]     # ← Stego qo‘shildi
 jobs:
   test:
     name: Test & Analyze

@@ -1,20 +1,17 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
+# This file configures the analyzer...
 
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
   errors:
-    # curly_braces_in_flow_control_structures: info   # agar kerak bo‘lsa qoldiring
-    # prefer_const_constructors: info
+    # Kerak bo‘lsa quyidagilarni qo‘shing
     unnecessary_non_null_assertion: warning
 
 linter:
   rules:
-    # Quyidagilarni false qilish orqali ogohlantirishlarni o‘chirish
+    # Oldingi ogohlantirishlarni o‘chirish
     curly_braces_in_flow_control_structures: false
     prefer_const_constructors: false
     
-    # Qo‘shimcha tavsiya etilgan o‘chirishlar (hozirgi warninglar uchun)
-    unnecessary_non_null_assertion: false
-    unused_import: false
+    # Yangi chiqqan info ni o‘chirish
+    library_prefixes: false

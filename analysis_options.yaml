@@ -26,3 +26,12 @@ linter:
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+analyzer:
+  errors:
+    curly_braces_in_flow_control_structures: info   # yoki ignore
+    prefer_const_constructors: info
+
+linter:
+  rules:
+    curly_braces_in_flow_control_structures: false
+    prefer_const_constructors: false

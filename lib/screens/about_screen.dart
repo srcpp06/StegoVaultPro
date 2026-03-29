@@ -31,10 +31,10 @@ class AboutScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: AppTheme.bgCard,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: AppTheme.accent.withOpacity(0.3), width: 2),
+                      border: Border.all(color: AppTheme.accent.withValues(alpha: 0.3), width: 2),
                       boxShadow: [
                         BoxShadow(
-                          color: AppTheme.accent.withOpacity(0.15),
+                          color: AppTheme.accent.withValues(alpha: 0.15),
                           blurRadius: 30,
                           spreadRadius: 5,
                         ),
@@ -142,7 +142,7 @@ class AboutScreen extends StatelessWidget {
               child: Text(
                 '© Steganography App',
                 style: GoogleFonts.spaceMono(
-                  color: AppTheme.textSecondary.withOpacity(0.4),
+                  color: AppTheme.textSecondary.withValues(alpha: 0.4),
                   fontSize: 12,
                 ),
               ),
@@ -175,7 +175,7 @@ class _Section extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppTheme.bgCard,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

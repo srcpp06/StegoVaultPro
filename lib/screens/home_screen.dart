@@ -122,9 +122,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           .map((c) => Padding(
               padding: const EdgeInsets.only(left: 5),
               child: Container(width: 6, height: 6,
-                  decoration: BoxDecoration(color: c.withOpacity(0.7),
+                  decoration: BoxDecoration(color: c.withValues(alpha: 0.7),
                       shape: BoxShape.circle,
-                      boxShadow: [BoxShadow(color: c.withOpacity(0.5), blurRadius: 4)])))),
+                      boxShadow: [BoxShadow(color: c.withValues(alpha: 0.5), blurRadius: 4)])))),
     ]),
   );
 
@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       color: AppTheme.bgCard,
       borderRadius: BorderRadius.circular(mobile ? 20 : 22),
       border: Border.all(color: _q.isNotEmpty
-          ? AppTheme.accent.withOpacity(0.5) : AppTheme.border)),
+          ? AppTheme.accent.withValues(alpha: 0.5) : AppTheme.border)),
     child: Row(children: [
       const SizedBox(width: 12),
       Icon(Icons.search, color: AppTheme.textSecondary, size: mobile ? 16 : 18),
@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         decoration: InputDecoration(
           hintText: 'Qidirish...',
           hintStyle: GoogleFonts.spaceMono(
-              color: AppTheme.textSecondary.withOpacity(0.4),
+              color: AppTheme.textSecondary.withValues(alpha: 0.4),
               fontSize: mobile ? 11 : 12),
           border: InputBorder.none, enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none, isDense: true,
@@ -166,10 +166,10 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     padding: EdgeInsets.all(mobile ? 16 : 20),
     decoration: BoxDecoration(
       gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight,
-          colors: [AppTheme.accent.withOpacity(0.07),
-              const Color(0xFFE91E8C).withOpacity(0.04), AppTheme.bgCard]),
+          colors: [AppTheme.accent.withValues(alpha: 0.07),
+              const Color(0xFFE91E8C).withValues(alpha: 0.04), AppTheme.bgCard]),
       borderRadius: BorderRadius.circular(AppTheme.cardRadius(context)),
-      border: Border.all(color: AppTheme.accent.withOpacity(0.13))),
+      border: Border.all(color: AppTheme.accent.withValues(alpha: 0.13))),
     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Row(children: [
         Container(width: 7, height: 7,
@@ -198,14 +198,14 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       decoration: BoxDecoration(
         color: AppTheme.bgCard,
         borderRadius: BorderRadius.circular(AppTheme.cardRadius(context)),
-        border: Border.all(color: c.color.withOpacity(0.18)),
+        border: Border.all(color: c.color.withValues(alpha: 0.18)),
         boxShadow: [BoxShadow(
-            color: c.color.withOpacity(0.05), blurRadius: 14, offset: const Offset(0, 3))]),
+            color: c.color.withValues(alpha: 0.05), blurRadius: 14, offset: const Offset(0, 3))]),
       child: Row(children: [
         Container(width: mobile ? 40 : 46, height: mobile ? 40 : 46,
-            decoration: BoxDecoration(color: c.color.withOpacity(0.1),
+            decoration: BoxDecoration(color: c.color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(9),
-                border: Border.all(color: c.color.withOpacity(0.22))),
+                border: Border.all(color: c.color.withValues(alpha: 0.22))),
             child: Icon(c.icon, color: c.color, size: mobile ? 20 : 22)),
         SizedBox(width: mobile ? 10 : 13),
         Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -213,14 +213,14 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               fontSize: mobile ? 11 : 12, fontWeight: FontWeight.w600, letterSpacing: 0.4)),
           const SizedBox(height: 2),
           Text(c.subtitle, style: GoogleFonts.spaceMono(
-              color: c.color.withOpacity(0.8), fontSize: mobile ? 10 : 11)),
+              color: c.color.withValues(alpha: 0.8), fontSize: mobile ? 10 : 11)),
           const SizedBox(height: 3),
           Text(c.desc, style: GoogleFonts.spaceMono(
-              color: AppTheme.textSecondary.withOpacity(0.6),
+              color: AppTheme.textSecondary.withValues(alpha: 0.6),
               fontSize: mobile ? 10 : 11, height: 1.4),
               maxLines: mobile ? 1 : 2, overflow: TextOverflow.ellipsis),
         ])),
-        Icon(Icons.chevron_right, color: c.color.withOpacity(0.45),
+        Icon(Icons.chevron_right, color: c.color.withValues(alpha: 0.45),
             size: mobile ? 18 : 20),
       ]),
     ),

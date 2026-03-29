@@ -81,7 +81,7 @@ class _State extends State<GenericHideScreen> with SingleTickerProviderStateMixi
         ]),
         backgroundColor: AppTheme.bgDeep,
         bottom: PreferredSize(preferredSize: const Size.fromHeight(1),
-            child: Container(height: 1, color: color.withOpacity(0.3))),
+            child: Container(height: 1, color: color.withValues(alpha: 0.3))),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(AppTheme.hPad(context)),
@@ -95,11 +95,11 @@ class _State extends State<GenericHideScreen> with SingleTickerProviderStateMixi
           if (cfg.capacityInfo != null && _coverPath != null) ...[
             const SizedBox(height: 5),
             Row(children: [
-              Icon(Icons.storage, color: color.withOpacity(0.6), size: 12),
+              Icon(Icons.storage, color: color.withValues(alpha: 0.6), size: 12),
               const SizedBox(width: 5),
               Text(cfg.capacityInfo!(_coverPath),
                   style: GoogleFonts.spaceMono(
-                      color: color.withOpacity(0.7), fontSize: mobile ? 10 : 11)),
+                      color: color.withValues(alpha: 0.7), fontSize: mobile ? 10 : 11)),
             ]),
           ],
           SizedBox(height: mobile ? 14 : 18),
@@ -125,7 +125,7 @@ class _State extends State<GenericHideScreen> with SingleTickerProviderStateMixi
           const SizedBox(height: 6),
           Text('⚠ Parol boshqa qurilmada ham ishlaydi',
               style: GoogleFonts.spaceMono(
-                  color: AppTheme.warning.withOpacity(0.7), fontSize: mobile ? 10 : 11)),
+                  color: AppTheme.warning.withValues(alpha: 0.7), fontSize: mobile ? 10 : 11)),
           SizedBox(height: mobile ? 20 : 28),
           _btn(color, mobile),
           const SizedBox(height: 20),
@@ -137,23 +137,23 @@ class _State extends State<GenericHideScreen> with SingleTickerProviderStateMixi
 
   Widget _infoBox(Color color, bool mobile) => Container(
     padding: const EdgeInsets.all(12),
-    decoration: BoxDecoration(color: color.withOpacity(0.05),
+    decoration: BoxDecoration(color: color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withOpacity(0.2))),
+        border: Border.all(color: color.withValues(alpha: 0.2))),
     child: Row(children: [
       Icon(Icons.info_outline, color: color, size: 14),
       const SizedBox(width: 8),
       Expanded(child: Text('${cfg.displayName} fayli ichiga boshqa fayl yashirish.',
-          style: GoogleFonts.spaceMono(color: color.withOpacity(0.8),
+          style: GoogleFonts.spaceMono(color: color.withValues(alpha: 0.8),
               fontSize: mobile ? 11 : 12))),
     ]),
   );
 
   Widget _lbl(String n, String t, bool mobile) => Row(children: [
     Container(width: 22, height: 22,
-        decoration: BoxDecoration(color: AppTheme.accent.withOpacity(0.12),
+        decoration: BoxDecoration(color: AppTheme.accent.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(4),
-            border: Border.all(color: AppTheme.accent.withOpacity(0.35))),
+            border: Border.all(color: AppTheme.accent.withValues(alpha: 0.35))),
         child: Center(child: Text(n, style: GoogleFonts.orbitron(
             color: AppTheme.accent, fontSize: 9, fontWeight: FontWeight.bold)))),
     const SizedBox(width: 8),
@@ -167,7 +167,7 @@ class _State extends State<GenericHideScreen> with SingleTickerProviderStateMixi
     child: AnimatedBuilder(animation: _glow, builder: (_, __) => Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
         boxShadow: _coverPath != null && _secretPath != null ? [BoxShadow(
-            color: color.withOpacity(0.2 + _glow.value * 0.3),
+            color: color.withValues(alpha: 0.2 + _glow.value * 0.3),
             blurRadius: 20)] : []),
       child: ElevatedButton.icon(
         onPressed: _processing ? null : _hide,

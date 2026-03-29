@@ -86,7 +86,7 @@ class _UnhideScreenState extends State<UnhideScreen> with SingleTickerProviderSt
         ]),
         backgroundColor: AppTheme.bgDeep,
         bottom: PreferredSize(preferredSize: const Size.fromHeight(1),
-            child: Container(height: 1, color: AppTheme.accentOrange.withOpacity(0.3))),
+            child: Container(height: 1, color: AppTheme.accentOrange.withValues(alpha: 0.3))),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(pad),
@@ -106,7 +106,7 @@ class _UnhideScreenState extends State<UnhideScreen> with SingleTickerProviderSt
             const SizedBox(height: 6),
             Text('🔒 Fayl parollangan — to\'g\'ri parol kiriting',
                 style: GoogleFonts.spaceMono(
-                    color: AppTheme.error.withOpacity(0.8),
+                    color: AppTheme.error.withValues(alpha: 0.8),
                     fontSize: mobile ? 10 : 11)),
           ],
           SizedBox(height: mobile ? 20 : 28),
@@ -121,25 +121,25 @@ class _UnhideScreenState extends State<UnhideScreen> with SingleTickerProviderSt
   Widget _infoBox(bool mobile) => Container(
     padding: const EdgeInsets.all(12),
     decoration: BoxDecoration(
-      color: AppTheme.accentOrange.withOpacity(0.05),
+      color: AppTheme.accentOrange.withValues(alpha: 0.05),
       borderRadius: BorderRadius.circular(8),
-      border: Border.all(color: AppTheme.accentOrange.withOpacity(0.2))),
+      border: Border.all(color: AppTheme.accentOrange.withValues(alpha: 0.2))),
     child: Row(children: [
       const Icon(Icons.info_outline, color: AppTheme.accentOrange, size: 15),
       const SizedBox(width: 8),
       Expanded(child: Text(
         'Faqat PNG formatidagi rasm ishlatilishi mumkin.\nParol avtomatik aniqlanadi.',
         style: GoogleFonts.spaceMono(
-            color: AppTheme.accentOrange.withOpacity(0.8),
+            color: AppTheme.accentOrange.withValues(alpha: 0.8),
             fontSize: mobile ? 10 : 12))),
     ]),
   );
 
   Widget _label(String n, String t, Color c, bool mobile) => Row(children: [
     Container(width: 22, height: 22,
-        decoration: BoxDecoration(color: c.withOpacity(0.12),
+        decoration: BoxDecoration(color: c.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(4),
-            border: Border.all(color: c.withOpacity(0.35))),
+            border: Border.all(color: c.withValues(alpha: 0.35))),
         child: Center(child: Text(n, style: GoogleFonts.orbitron(
             color: c, fontSize: 9, fontWeight: FontWeight.bold)))),
     const SizedBox(width: 8),
@@ -155,7 +155,7 @@ class _UnhideScreenState extends State<UnhideScreen> with SingleTickerProviderSt
       prefixIcon: Icon(Icons.lock_outline, color: pwColor, size: 17),
       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: _needsPw
-              ? AppTheme.error.withOpacity(0.5) : AppTheme.border)),
+              ? AppTheme.error.withValues(alpha: 0.5) : AppTheme.border)),
       focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: pwColor, width: 1.5)),
       suffixIcon: IconButton(
@@ -170,7 +170,7 @@ class _UnhideScreenState extends State<UnhideScreen> with SingleTickerProviderSt
     child: AnimatedBuilder(animation: _glow, builder: (_, __) => Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
         boxShadow: _coverPath != null ? [BoxShadow(
-            color: AppTheme.accentOrange.withOpacity(0.15 + _glow.value * 0.25),
+            color: AppTheme.accentOrange.withValues(alpha: 0.15 + _glow.value * 0.25),
             blurRadius: 20, spreadRadius: 2)] : []),
       child: ElevatedButton.icon(
         onPressed: _processing ? null : _unhide,

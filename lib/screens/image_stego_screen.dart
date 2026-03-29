@@ -112,13 +112,13 @@ class _InfoRow extends StatelessWidget {
       padding: const EdgeInsets.only(top: 6),
       child: Row(
         children: [
-          Icon(icon, color: AppTheme.accent.withOpacity(0.6), size: 13),
+          Icon(icon, color: AppTheme.accent.withValues(alpha: 0.6), size: 13),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
               text,
               style: GoogleFonts.spaceMono(
-                color: AppTheme.textSecondary.withOpacity(0.7),
+                color: AppTheme.textSecondary.withValues(alpha: 0.7),
                 fontSize: 11,
               ),
             ),
@@ -156,10 +156,10 @@ class _ActionCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppTheme.bgCard,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.08),
+              color: color.withValues(alpha: 0.08),
               blurRadius: 20,
               spreadRadius: 1,
             ),
@@ -171,9 +171,9 @@ class _ActionCard extends StatelessWidget {
               width: 52,
               height: 52,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.12),
+                color: color.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: color.withOpacity(0.3)),
+                border: Border.all(color: color.withValues(alpha: 0.3)),
               ),
               child: Icon(icon, color: color, size: 26),
             ),
@@ -207,7 +207,7 @@ class _ActionCard extends StatelessWidget {
                   Text(
                     description,
                     style: GoogleFonts.spaceMono(
-                      color: AppTheme.textSecondary.withOpacity(0.7),
+                      color: AppTheme.textSecondary.withValues(alpha: 0.7),
                       fontSize: 12,
                       height: 1.5,
                     ),
@@ -215,7 +215,7 @@ class _ActionCard extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(Icons.arrow_forward_ios, color: color.withOpacity(0.5), size: 16),
+            Icon(Icons.arrow_forward_ios, color: color.withValues(alpha: 0.5), size: 16),
           ],
         ),
       ),

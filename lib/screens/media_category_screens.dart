@@ -110,10 +110,10 @@ class _InfoRow extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.only(top: 6),
         child: Row(children: [
-          Icon(icon, color: color.withOpacity(0.6), size: 13),
+          Icon(icon, color: color.withValues(alpha: 0.6), size: 13),
           const SizedBox(width: 8),
           Expanded(child: Text(text, style: GoogleFonts.spaceMono(
-              color: AppTheme.textSecondary.withOpacity(0.7), fontSize: 11))),
+              color: AppTheme.textSecondary.withValues(alpha: 0.7), fontSize: 11))),
         ]),
       );
 }
@@ -137,16 +137,16 @@ class _ActionCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppTheme.bgCard,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: color.withOpacity(0.28)),
-            boxShadow: [BoxShadow(color: color.withOpacity(0.07), blurRadius: 18, offset: const Offset(0, 4))],
+            border: Border.all(color: color.withValues(alpha: 0.28)),
+            boxShadow: [BoxShadow(color: color.withValues(alpha: 0.07), blurRadius: 18, offset: const Offset(0, 4))],
           ),
           child: Row(children: [
             Container(
               width: 50, height: 50,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: color.withOpacity(0.3)),
+                border: Border.all(color: color.withValues(alpha: 0.3)),
               ),
               child: Icon(icon, color: color, size: 24),
             ),
@@ -161,9 +161,9 @@ class _ActionCard extends StatelessWidget {
               ]),
               const SizedBox(height: 5),
               Text(description, style: GoogleFonts.spaceMono(
-                  color: AppTheme.textSecondary.withOpacity(0.7), fontSize: 11, height: 1.5)),
+                  color: AppTheme.textSecondary.withValues(alpha: 0.7), fontSize: 11, height: 1.5)),
             ])),
-            Icon(Icons.arrow_forward_ios, color: color.withOpacity(0.5), size: 15),
+            Icon(Icons.arrow_forward_ios, color: color.withValues(alpha: 0.5), size: 15),
           ]),
         ),
       );

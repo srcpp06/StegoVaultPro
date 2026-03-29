@@ -76,7 +76,7 @@ class _HideScreenState extends State<HideScreen> with SingleTickerProviderStateM
         ]),
         backgroundColor: AppTheme.bgDeep,
         bottom: PreferredSize(preferredSize: const Size.fromHeight(1),
-            child: Container(height: 1, color: AppTheme.accentGreen.withOpacity(0.3))),
+            child: Container(height: 1, color: AppTheme.accentGreen.withValues(alpha: 0.3))),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(pad),
@@ -101,7 +101,7 @@ class _HideScreenState extends State<HideScreen> with SingleTickerProviderStateM
           const SizedBox(height: 6),
           Text('⚠ Parol boshqa qurilmada ham ishlaydi',
               style: GoogleFonts.spaceMono(
-                  color: AppTheme.warning.withOpacity(0.7),
+                  color: AppTheme.warning.withValues(alpha: 0.7),
                   fontSize: mobile ? 10 : 11)),
           SizedBox(height: mobile ? 20 : 28),
           _hideBtn(),
@@ -115,24 +115,24 @@ class _HideScreenState extends State<HideScreen> with SingleTickerProviderStateM
   Widget _infoBox() => Container(
     padding: const EdgeInsets.all(12),
     decoration: BoxDecoration(
-      color: AppTheme.accentGreen.withOpacity(0.05),
+      color: AppTheme.accentGreen.withValues(alpha: 0.05),
       borderRadius: BorderRadius.circular(8),
-      border: Border.all(color: AppTheme.accentGreen.withOpacity(0.2))),
+      border: Border.all(color: AppTheme.accentGreen.withValues(alpha: 0.2))),
     child: Row(children: [
       const Icon(Icons.info_outline, color: AppTheme.accentGreen, size: 15),
       const SizedBox(width: 8),
       Expanded(child: Text('Natija PNG formatida saqlanadi (LSB uchun zarur).',
           style: GoogleFonts.spaceMono(
-              color: AppTheme.accentGreen.withOpacity(0.8),
+              color: AppTheme.accentGreen.withValues(alpha: 0.8),
               fontSize: AppTheme.isMobile(context) ? 11 : 12))),
     ]),
   );
 
   Widget _label(String n, String t) => Row(children: [
     Container(width: 22, height: 22,
-        decoration: BoxDecoration(color: AppTheme.accent.withOpacity(0.12),
+        decoration: BoxDecoration(color: AppTheme.accent.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(4),
-            border: Border.all(color: AppTheme.accent.withOpacity(0.35))),
+            border: Border.all(color: AppTheme.accent.withValues(alpha: 0.35))),
         child: Center(child: Text(n, style: GoogleFonts.orbitron(
             color: AppTheme.accent, fontSize: 9, fontWeight: FontWeight.bold)))),
     const SizedBox(width: 8),
@@ -159,7 +159,7 @@ class _HideScreenState extends State<HideScreen> with SingleTickerProviderStateM
     child: AnimatedBuilder(animation: _glow, builder: (_, __) => Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
         boxShadow: _coverPath != null && _secretPath != null ? [BoxShadow(
-            color: AppTheme.accentGreen.withOpacity(0.2 + _glow.value * 0.3),
+            color: AppTheme.accentGreen.withValues(alpha: 0.2 + _glow.value * 0.3),
             blurRadius: 20, spreadRadius: 2)] : []),
       child: ElevatedButton.icon(
         onPressed: _processing ? null : _hide,

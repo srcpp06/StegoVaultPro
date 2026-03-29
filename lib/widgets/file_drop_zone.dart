@@ -40,10 +40,10 @@ class FileDropZone extends StatelessWidget {
         width: double.infinity,
         constraints: BoxConstraints(minHeight: mobile ? 72 : 90),
         decoration: BoxDecoration(
-          color: hasFile ? color.withOpacity(0.06) : AppTheme.bgElevated,
+          color: hasFile ? color.withValues(alpha: 0.06) : AppTheme.bgElevated,
           borderRadius: BorderRadius.circular(AppTheme.cardRadius(context)),
           border: Border.all(
-            color: hasFile ? color.withOpacity(0.5) : AppTheme.border,
+            color: hasFile ? color.withValues(alpha: 0.5) : AppTheme.border,
             width: hasFile ? 1.5 : 1,
           ),
         ),
@@ -55,7 +55,7 @@ class FileDropZone extends StatelessWidget {
   Widget _empty(BuildContext context, bool mobile) => Padding(
         padding: EdgeInsets.all(mobile ? 14 : 20),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Icon(icon, color: color.withOpacity(0.4), size: mobile ? 26 : 32),
+          Icon(icon, color: color.withValues(alpha: 0.4), size: mobile ? 26 : 32),
           const SizedBox(height: 8),
           Text(label,
               textAlign: TextAlign.center,
@@ -64,7 +64,7 @@ class FileDropZone extends StatelessWidget {
           const SizedBox(height: 4),
           Text('Bosing yoki tanlang',
               style: GoogleFonts.spaceMono(
-                  color: AppTheme.textSecondary.withOpacity(0.45),
+                  color: AppTheme.textSecondary.withValues(alpha: 0.45),
                   fontSize: mobile ? 10 : 11)),
         ]),
       );
@@ -122,7 +122,7 @@ class FileDropZone extends StatelessWidget {
     return Container(
       width: size, height: size,
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Icon(icon, color: color, size: mobile ? 22 : 26),

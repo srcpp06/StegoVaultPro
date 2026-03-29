@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:convert';
-import 'package:crypto/crypto.dart';
 import 'package:image/image.dart' as img;
 import 'package:path/path.dart' as pathLib;
 import 'stego_utils.dart';
@@ -85,7 +84,7 @@ class SteganographyService {
     final hasPassword = password != null && password.isNotEmpty;
     Uint8List data = fileData;
     if (hasPassword) {
-      data = StegoUtils.xorCrypt(fileData, StegoUtils.deriveKey(password!));
+      data = StegoUtils.xorCrypt(fileData, StegoUtils.deriveKey(password));
     }
     final fileNameBytes = utf8.encode(fileName);
     final bb = BytesBuilder();

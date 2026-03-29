@@ -91,7 +91,7 @@ class AudioStegoService {
         final hasPassword = password != null && password.isNotEmpty;
         Uint8List data = fileBytes;
         if (hasPassword) {
-          data = StegoUtils.xorCrypt(fileBytes, StegoUtils.deriveKey(password!));
+          data = StegoUtils.xorCrypt(fileBytes, StegoUtils.deriveKey(password));
         }
 
         final fileNameBytes = utf8.encode(fileName);

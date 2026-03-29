@@ -43,7 +43,7 @@ class StegoUtils {
     final hasPassword = password != null && password.isNotEmpty;
     Uint8List data = fileData;
     if (hasPassword) {
-      data = xorCrypt(fileData, deriveKey(password!));
+      data = xorCrypt(fileData, deriveKey(password));
     }
 
     final fileNameBytes = utf8.encode(fileName);

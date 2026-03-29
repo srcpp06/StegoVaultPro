@@ -46,10 +46,10 @@ class ResultCard extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 400),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.06),
+        color: color.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(AppTheme.cardRadius(context)),
-        border: Border.all(color: color.withOpacity(0.3), width: 1.5),
-        boxShadow: [BoxShadow(color: color.withOpacity(0.1), blurRadius: 20)],
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 20)],
       ),
       padding: EdgeInsets.all(mobile ? 14 : 18),
       child: Column(
@@ -121,7 +121,7 @@ class ResultCard extends StatelessWidget {
               child: OutlinedButton.icon(
                 onPressed: () => _openFolder(context, result.outputPath!),
                 style: OutlinedButton.styleFrom(
-                  side: BorderSide(color: color.withOpacity(0.4)),
+                  side: BorderSide(color: color.withValues(alpha: 0.4)),
                   foregroundColor: color,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                   padding: EdgeInsets.symmetric(vertical: mobile ? 10 : 12),

@@ -51,6 +51,8 @@ jobs:
         run: flutter pub get
       - name: Build Windows
         run: flutter build windows --release
+        env:
+          CL: /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS
       - name: Zip Windows build
         run: Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath windows-app.zip
       - name: Upload Windows artifact

@@ -5,8 +5,6 @@ import 'package:crypto/crypto.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
-// ─── Shared Result ────────────────────────────────────────────────────────────
-
 class StegoResult {
   final bool success;
   final String message;
@@ -14,8 +12,6 @@ class StegoResult {
 
   StegoResult({required this.success, required this.message, this.outputPath});
 }
-
-// ─── Shared Crypto ────────────────────────────────────────────────────────────
 
 class StegoUtils {
   static const String trailMagic = 'STEGO_TR';

@@ -18,4 +18,4 @@ Hide any file inside a cover file without visibly changing it. Images use LSB (L
 
 ## Preview
 
-🔗 [View on Telegram](https://t.me/sr_cpp_flutter_projects)
+🔗 [View on Telegram](https://t.me/sr_cpp_flutter_projects/33)

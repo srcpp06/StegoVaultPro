@@ -1,9 +1,9 @@
 name: Flutter CI/CD
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop, Stego ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop, Stego ]
   workflow_dispatch:
 permissions:
   contents: write

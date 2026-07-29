@@ -1,16 +1,21 @@
-# sego_app
+# StegoVault Pro
 
-A new Flutter project.
+A cross-platform steganography app that hides files inside images, audio, video, and documents — invisibly and optionally password-protected.
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+Hide any file inside a cover file without visibly changing it. Images use LSB (Least Significant Bit) encoding directly on pixel data; audio, video, and documents use payload-appending with magic-byte markers. Every hidden file can be optionally encrypted with a password before embedding, and extracted later only with the correct password.
 
-A few resources to get you started if this is your first Flutter project:
+## Skills
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+`LSB bit manipulation`, `SHA-256` key derivation, `XOR` encryption, byte-level binary parsing, `BytesBuilder`, generic config-driven screens (strategy pattern), `share_plus`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech
+
+- **Language:** Dart
+- **Framework:** Flutter
+- **Packages:** `image`, `crypto`, `file_picker`, `path_provider`
+
+## Preview
+
+🔗 [View on Telegram](https://t.me/sr_cpp_flutter_projects)

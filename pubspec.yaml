@@ -23,14 +23,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  flutter_launcher_icons: ^0.13.1  # eng barqaror versiya
+  flutter_launcher_icons: ^0.13.1
   rename_app: ^1.6.5
 
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/image/logo.jpg"   # jpg o'rniga png tavsiya (shaffof fon uchun yaxshi)
-  adaptive_icon_background: "#000000"   # qora fon, neon logoga mos
+  image_path: "assets/image/logo.jpg"
+  adaptive_icon_background: "#000000"  
   adaptive_icon_foreground: "assets/image/logo.jpg"
   remove_alpha_ios: true
 

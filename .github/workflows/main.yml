@@ -35,7 +35,7 @@ jobs:
           path: build/app/outputs/flutter-apk/app-release.apk
 
   build-windows:
-    name: Build Windows Installer
+    name: Build Windows EXE
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -53,37 +53,11 @@ jobs:
         run: flutter build windows --release
         env:
           CL: /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS
-      - name: Install Inno Setup
-        run: choco install innosetup -y
-      - name: Create Inno Setup script
-        shell: bash
-        run: |
-          mkdir -p installer
-          cat > installer/setup.iss << 'EOF'
-          [Setup]
-          AppName=StegoVaultPro
-          AppVersion=1.0
-          DefaultDirName={autopf}\StegoVaultPro
-          DefaultGroupName=StegoVaultPro
-          OutputDir=..\installer_output
-          OutputBaseFilename=StegoVaultPro-Setup
-          Compression=lzma
-          SolidCompression=yes
-
-          [Files]
-          Source: "..\build\windows\x64\runner\Release\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs
-
-          [Icons]
-          Name: "{group}\StegoVaultPro"; Filename: "{app}\stegovault_pro.exe"
-          Name: "{commondesktop}\StegoVaultPro"; Filename: "{app}\stegovault_pro.exe"
-          EOF
-      - name: Build installer
-        run: '"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\setup.iss'
-      - name: Upload Windows installer
+      - name: Upload Windows build folder
         uses: actions/upload-artifact@v4
         with:
-          name: windows-installer
-          path: installer_output/StegoVaultPro-Setup.exe
+          name: windows-build
+          path: build/windows/x64/runner/Release/*
 
   build-linux:
     name: Build Linux AppImage
@@ -126,7 +100,6 @@ jobs:
           Type=Application
           Categories=Utility;
           EOF
-          # Placeholder icon agar loyihada icon topilmasa
           if [ -f "assets/icon.png" ]; then
             cp assets/icon.png AppDir/stegovaultpro.png
           else
@@ -134,8 +107,7 @@ jobs:
             convert -size 256x256 xc:blue AppDir/stegovaultpro.png
           fi
       - name: Build AppImage
-        run: |
-          ./appimagetool AppDir StegoVaultPro-x86_64.AppImage
+        run: ./appimagetool AppDir StegoVaultPro-x86_64.AppImage
       - name: Upload Linux AppImage
         uses: actions/upload-artifact@v4
         with:
@@ -152,11 +124,11 @@ jobs:
         with:
           name: android-apk
           path: release-files
-      - name: Download Windows installer
+      - name: Download Windows build
         uses: actions/download-artifact@v4
         with:
-          name: windows-installer
-          path: release-files
+          name: windows-build
+          path: release-files/windows
       - name: Download Linux AppImage
         uses: actions/download-artifact@v4
         with:
@@ -165,6 +137,6 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release-files/*"
+          artifacts: "release-files/*.apk,release-files/*.AppImage,release-files/windows/*"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.GITHUB_TOKEN }}
